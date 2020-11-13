@@ -1,7 +1,11 @@
+
+
 <div class="banner">
   <div class="banner-content">
     <h1>Le Wagon's cocktails</h1>
     <p>Awesome beverages for developers nightlife</p>
+    <%= cl_image_tag("m7wegtbakvm8k3xxegqq",
+      width: 150, height: 150, crop: :fill) %>
     <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
@@ -13,6 +17,7 @@
           <div class="card-product">
             <div class="card-product-infos">
             <h2><%= cocktail.name %></h2>
+            <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill if cocktail.photo.attached? %>
             </div>
           </div>
           <%= link_to "view", cocktail_path(cocktail), class: 'card-link' %>
@@ -21,6 +26,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 <div class="card-product">

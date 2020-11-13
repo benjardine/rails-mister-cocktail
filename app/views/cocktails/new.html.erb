@@ -1,6 +1,7 @@
 <div class="row justify-content-center">
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file, direct_upload: true%>
   <%= f.submit "Add cocktail", class: "btn btn-primary"%>
 <% end %>
 </div>
